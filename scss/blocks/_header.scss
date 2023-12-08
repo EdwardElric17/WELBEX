@@ -1,0 +1,36 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+
+	font-family: 'Inter', sans-serif;
+	color: $base_color;
+}
+.header__logo {
+	margin-top: 11px;
+	.logo-image {
+		width: 140px;
+		height: 24px;
+	}
+	.logo-desc {
+		margin-top: 10px;
+		font-size: $mini_size;
+	}
+	a {
+		text-decoration: none;
+	}
+}
+.header__nav {
+	margin-top: 15px;
+	.nav-list {
+		display: flex;
+		gap: 30px;
+	}
+}
+.header__contacts {
+	display: flex;
+	.phone-number {
+		white-space: nowrap;
+	}
+	.
+}
