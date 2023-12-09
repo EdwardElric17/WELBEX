@@ -11,8 +11,8 @@ body {
 	min-height: 100vh;
 	min-width: 100vw;
 	width: 100%;
-	padding: 46px 150px 20px;
-	background: #1E1E1E;
+	// padding: 46px 150px 20px;
+	background: $background_color;
 
 	overflow: hidden;
 }
@@ -26,6 +26,7 @@ a {
 	}
 }
 .red-ball {
+	z-index: 0;
 	position: absolute;
 	top: 83px;
 	left: 519px;
@@ -40,6 +41,7 @@ a {
 											rgba(130, 25, 25, 0.31) 100%);
 }
 .red-ball2 {
+	z-index: 0;
 	position: absolute;
 	top: 547px;
 	left: 851px;
@@ -55,6 +57,7 @@ a {
 											rgb(130, 25, 25, 0.29) 100%);
 }
 .purple-ball {
+	z-index: 0;
 	position: absolute;
 	top: -2px;
 	left: 868px;
@@ -88,4 +91,57 @@ a {
 	border-radius: 50%;
 	filter: blur(200px);
 	background-color: rgba(150, 26, 26, 0.5);
+}
+.yellow-light {
+	display: none;
+	position: absolute;
+	top: 519px;
+	left: -66px;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	filter: blur(200px);
+	background-color: rgba(252, 176, 69);
+}
+
+@media screen and (max-width: $tablet) {
+	.container {
+		grid-template-rows: 100px auto auto;
+		background: $background_color_tablet;
+		backdrop-filter: blur(15px);
+	}
+	.bg-noise {
+		background-image: url('/images/main/noise.png');
+	}
+	.purple-light {
+		left: 258px;
+		top: 107px;
+	}
+	.red-light {
+		left: -55px;
+		top: 241px;
+	}
+	.yellow-light {
+		display: block;
+	}
+	.red-ball2 {
+		left: 29px;
+		top: 472px;
+		width: 43px;
+		height: 43px;
+		filter: blur(4px);
+	}
+	.purple-ball {
+		left: 296px;
+		top: 236px;
+		width: 40px;
+		height: 40px;
+		filter: blur(4px);
+		backdrop-filter: blur(10px);
+	}
+}
+@media screen and (max-width: $semi_tablet) {
+	.container {
+		grid-template-rows: 60px auto auto;
+	}
 }

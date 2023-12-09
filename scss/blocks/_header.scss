@@ -1,17 +1,43 @@
 .header {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 137px;
+	padding: 46px 165px 20px 150px;
 
 	font-family: 'Inter', sans-serif;
 	color: $base_color;
 
 	background-color: transparent;
 	z-index: 1;
+	@include mediaDecstop {
+		grid-template-columns: repeat(1, 1fr);
+		padding: 36px 110px 20px 95px;
+	}
+	@include mediaTablet {
+		height: 100px;
+		padding: 15px 80px 15px 65px;
+		background-color: $background_color;
+	}
+	@include mediaSemiTablet {
+		height: 60px;
+		padding: 10px 50px 10px 35px;
+	}
+	@include mediaMobile {
+		height: 60px;
+		padding: 10px 30px 10px 15px;
+	}
 }
 .header-left {
 	display: flex;
 	gap: 52px;
+	@include mediaDecstop {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);	
+		// justify-self: center;	
+	}
+	@include mediaTablet {
+		grid-template-columns: repeat(1, 1fr);		
+	}
 }
 .header__logo {
 	margin-top: 11px;
@@ -28,21 +54,85 @@
 	a {
 		text-decoration: none;
 	}
+	@include mediaDecstop {
+		margin-top: 0px;
+	}
+	@include mediaTablet {
+		display: none;
+	}
 }
 .header__nav {
+	display: grid;
 	margin-top: 15px;
+	width: 100%;
+	.nav {
+		@include mediaDecstop {
+			justify-self: end;
+		}
+		@include mediaTablet {
+			justify-self: unset;
+		}
+		@include mediaMobile {
+			justify-self: unset;
+			font-size: $base_size_mobile;
+		}
+	}
 	.nav-list {
 		display: flex;
 		gap: 30px;
+		
+		@include mediaTablet {
+			display: grid;
+			gap: 0px;
+			grid-template-columns: repeat(5, auto);
+		}
+		@include mediaMobile {
+			display: flex;
+			gap: 0px;
+			justify-content: space-between;
+		}
 	}
 	.nav-elem {
 		font-weight: $medium;
+		&:nth-child(2) {
+			@include mediaTablet {
+				justify-self: center;
+			}
+		}
+		&:nth-child(3) {
+			@include mediaTablet {
+				justify-self: center;
+			}
+		}
+		&:nth-child(4) {
+			@include mediaTablet {
+				justify-self: center;
+			}
+		}
+		&:nth-child(5) {
+			@include mediaTablet {
+				justify-self: end;
+			}
+			@include mediaMobile {
+				display: none;
+			}
+		}
+	}
+	@include mediaDecstop {
+		margin-top: 0px;
+		justify-self: end;
+	}
+	@include mediaTablet {
+		justify-self: center;
+		align-self: center;
+		margin-top: 0px;
 	}
 }
 .header__contacts {
 	display: flex;
 	gap: 47px;
 	margin-top: 15px;
+	justify-self: end;
 	.phone-number {
 		font-weight: $medium;
 		white-space: nowrap;
@@ -54,5 +144,8 @@
 			min-height: 20px;
 			min-width: 20px;
 		}
+	}
+	@include mediaDecstop {
+		display: none;
 	}
 }

@@ -1,14 +1,9 @@
 // Colors
+$background_color: #0E1014;
+$background_color_tablet: #0e1014fa;
 $base_color: #E4E5EA;
 $button_color: #4077F3;
 $footerHeading_color: #656566;
-
-// Font sizes
-$mini_size: 0.625rem;
-$semibase_size: 0.875rem;
-$base_size: 1rem;
-$h3: 1.125rem;
-$h1: 3rem;
 
 // Font weight
 $light: 300;
@@ -18,6 +13,26 @@ $bold: 700;
 $black: 900;
 
 // Screen breakpoints
-$desctop: 1280px;
-$tablet: 780px;
-$mobile: 480px;
+$desctop: 1420px;
+$tablet: 1080px;
+$semi_tablet: 890px;
+$mobile: 645px;
+
+// Font sizes
+$mini_size: 0.625rem;
+$semibase_size: 0.875rem;
+$base_size: 1rem;
+$h3: 1.125rem;
+$h1: 3rem;
+
+$mini_size_tablet: 0.525rem;
+$semibase_size_tablet: 0.775rem;
+$base_size_tablet: 0.875rem;
+$h3_tablet: 1.125rem;
+$h1_tablet: 2.5rem;
+
+$mini_size_mobile: 0.425rem;
+$semibase_size_mobile: 0.675rem;
+$base_size_mobile: 0.75rem;
+$h3_mobile: 1.125rem;
+$h1_mobile: 2.25rem;

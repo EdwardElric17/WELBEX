@@ -8,6 +8,11 @@
 		@content;
 	}
 }
+@mixin mediaSemiTablet {
+	@media screen and (max-width: $semi_tablet) {
+		@content;
+	}
+}
 @mixin mediaMobile {
 	@media screen and (max-width: $mobile) {
 		@content;

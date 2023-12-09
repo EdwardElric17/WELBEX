@@ -1,22 +1,75 @@
 .main {
-	padding: 90px 0px 59px;
 	color: $base_color;
+	padding: 90px 165px 0px 150px;
 
 	background-color: transparent;
 	z-index: 1;
+	@include mediaDecstop {
+		padding: 30px 110px 0px 95px;
+	}
+	@include mediaTablet {
+		padding: 30px 80px 0px 65px;
+	}
+	@include mediaSemiTablet {
+		padding: 10px 50px 22.5px 35px;
+	}
+	@include mediaMobile {
+		padding: 10px 30px 0px 15px;
+	}
 }
+.header-part {
+	display: none;
+	justify-content: space-between;
+	@include mediaTablet {
+		display: flex;
+		margin-top: -30px;
+		margin-bottom: 20px;
+	}
+	@include mediaSemiTablet {
+		margin-top: -10px;
+		margin-bottom: 20px;
+	}
+	.contacts-logo {
+		display: flex;
+		gap: 20px;
+		img {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
 .hero {
 	display: flex;
 	justify-content: space-between;
 	gap: 50px;
 	color: inherit;
+	@include mediaTablet {
+		gap: 30px;
+	}
+	@include mediaSemiTablet {
+		display: grid;
+		grid-template-rows: repeat(2, 1fr);
+	}
 	h1 {
 		font-size: $h1;
+		@include mediaSemiTablet {
+			font-size: $h1_tablet !important;
+		}
+		@include mediaMobile {
+			font-size: $h1_mobile !important;
+		}
 	}
 	h3 {
 		font-family: 'Montserrat', sans-serif;
 		font-size: $h3;
 		font-weight: $regular;
+		@include mediaSemiTablet {
+			font-size: $h3_tablet !important;
+		}
+		@include mediaMobile {
+			font-size: $h3_mobile !important;
+		}
 	}
 	.hero-left {
 		h1 {
@@ -30,14 +83,28 @@
 				background-clip: text;
 				color: transparent;
 			}
+			@include mediaSemiTablet {
+				font-size: $h1_tablet !important;
+			}
+			@include mediaMobile {
+				font-size: $h1_mobile !important;
+			}
 		}
 		h3 {
 			margin-top: 30px;
+			@include mediaSemiTablet {
+				margin-top: 10px;
+			}
 		}
 	}
 	.hero-right {
 		margin-top: 15px;
 		text-align: right;
+		z-index: 1;
+		@include mediaSemiTablet {
+			margin-top: 0px;
+			justify-self: start;
+		}
 		h3 {
 			font-weight: $medium;
 			span {
@@ -48,10 +115,24 @@
 				-webkit-background-clip: text;
 				background-clip: text;
 				color: transparent;
-				background-size: 30% 100%;
+				background-size: 40% 100%;
 				background-position: 100% 0;
 				background-attachment: fixed;
 				transition: background-position 0.5s ease;
+			}
+			@include mediaSemiTablet {
+				text-align: left;
+				span {
+					background-size: 50% 100%;
+					background-position: 80% 0;
+				}
+			}
+			@include mediaMobile {
+				text-align: left;
+				span {
+					background-size: 80% 100%;
+					background-position: 10% 0;
+				}
 			}
 		}
 	}
@@ -60,6 +141,37 @@
 		grid-template-columns: repeat(2, 1fr);
   		gap: 36px;
 		margin-top: 40px;
+		@include mediaMobile {
+			display: none;
+		}
+	}
+	.hero-list-mobile {
+		display: none;
+		@include mediaMobile {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+  			column-gap: 25px;
+  			row-gap: 14px;
+			margin-top: 30px;
+		}
+		.list-elem {
+			div {
+				position: relative;
+				left: 16px;
+				font-size: 13px;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				&::before {
+					content: '';
+					position: absolute;
+					top: 7px;
+					left: -15px;
+					width: 10px;
+					height: 1.5px;
+					background: linear-gradient(to right, #FCB045 35%, #FD1D1D 100%);
+				}
+			}
+		}
 	}
 	.list-elem {
 		white-space: nowrap;
@@ -68,10 +180,19 @@
 			font-size: $h3;
 			font-weight: $medium;
 			letter-spacing: 2px;
+			@include mediaSemiTablet {
+				font-size: $h3_tablet !important;
+			}
+			@include mediaMobile {
+				font-size: $h3_mobile !important;
+			}
 		}
 		.desc {
 			font-family: 'Montserrat', sans-serif;
 			font-weight: $regular;
+		}
+		@include mediaSemiTablet {
+			text-align: left;
 		}
 	}
 	.hero-button {
@@ -87,6 +208,9 @@
 		}
 		&:active {
 			transform: scale(0.99);
+		}
+		@include mediaSemiTablet {
+			display: none;
 		}
 	}
 }
