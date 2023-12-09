@@ -1,0 +1,15 @@
+@mixin mediaDecstop {
+	@media screen and (max-width: $desctop) {
+		@content;
+	}
+}
+@mixin mediaTablet {
+	@media screen and (max-width: $tablet) {
+		@content;
+	}
+}
+@mixin mediaMobile {
+	@media screen and (max-width: $mobile) {
+		@content;
+	}
+}

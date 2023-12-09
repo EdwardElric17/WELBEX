@@ -27,18 +27,47 @@ a {
 }
 .red-ball {
 	position: absolute;
-	top: 75px;
-	left: 35%;
+	top: 83px;
+	left: 519px;
+	width: 83px;
+	height: 83px;
+	border-radius: 50%;
+	backdrop-filter: blur(1px);
+	box-shadow: 3px 6px 27px -10px rgba(223, 125, 125, 0.25);
+	background: radial-gradient(at 15% 15%, rgba(255, 208, 208, 0.67) 0%,
+											rgba(212, 93, 93, 0.33) 60%,
+											rgba(167, 49, 49, 0.31) 75%,
+											rgba(130, 25, 25, 0.31) 100%);
 }
 .red-ball2 {
 	position: absolute;
-	top: 55%;
-	left: 65%;
+	top: 547px;
+	left: 851px;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	filter: blur(2px);
+	backdrop-filter: blur(2px);
+	box-shadow: 3px 6px 27px -10px rgba(223, 125, 125, 0.251);
+	background: radial-gradient(at 10% 10%, rgba(255, 208, 208, 0.6) 0%,
+											rgba(212, 93, 93, 0.31) 60%,
+											rgba(167, 49, 49, 0.33) 75%,
+											rgb(130, 25, 25, 0.29) 100%);
 }
 .purple-ball {
 	position: absolute;
-	top: 0px;
-	left: 70%;
+	top: -2px;
+	left: 868px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	filter: blur(3px);
+	backdrop-filter: blur(2px);
+	box-shadow: 3px 6px 27px -10px rgba(177, 118, 217, 0.25);
+	background: radial-gradient(at 10% 10%, rgba(255, 208, 208, 0.8) 0%,
+											rgba(161, 93, 207, 0.30) 60%,
+											rgba(118, 49, 164, 0.26) 75%,
+											rgba(86, 24, 128, 0.29) 100%);
 }
 .purple-light {
 	position: absolute;
