@@ -1,10 +1,62 @@
 body {
 	font-family: 'inter', sans-serif;
 	color: $base_color;
+	height: 100vh;
 }
 .container {
-	height: 100vh;
+	position: relative;
+	display: grid;
+	grid-template-rows: auto;
+
+	min-height: 100vh;
+	min-width: 100vw;
 	width: 100%;
 	padding: 46px 150px 20px;
 	background: #1E1E1E;
+
+	overflow: hidden;
+}
+a {
+	transition: all 0.1s ease;
+	&:hover {
+		opacity: 0.8;
+	}
+	&:active {
+		transform: scale(0.96);
+	}
+}
+.red-ball {
+	position: absolute;
+	top: 75px;
+	left: 35%;
+}
+.red-ball2 {
+	position: absolute;
+	top: 55%;
+	left: 65%;
+}
+.purple-ball {
+	position: absolute;
+	top: 0px;
+	left: 70%;
+}
+.purple-light {
+	position: absolute;
+	top: -154px;
+	left: 602px;
+	width: 259px;
+	height: 259px;
+	border-radius: 50%;
+	filter: blur(200px);
+	background-color: rgba(131, 58, 180, 0.5);
+}
+.red-light {
+	position: absolute;
+	top: 251px;
+	left: -102px;
+	width: 311px;
+	height: 311px;
+	border-radius: 50%;
+	filter: blur(200px);
+	background-color: rgba(150, 26, 26, 0.5);
 }

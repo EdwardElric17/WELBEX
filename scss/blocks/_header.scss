@@ -1,10 +1,17 @@
 .header {
 	display: flex;
 	justify-content: space-between;
-	gap: 30px;
+	gap: 137px;
 
 	font-family: 'Inter', sans-serif;
 	color: $base_color;
+
+	background-color: transparent;
+	z-index: 1;
+}
+.header-left {
+	display: flex;
+	gap: 52px;
 }
 .header__logo {
 	margin-top: 11px;
@@ -15,6 +22,8 @@
 	.logo-desc {
 		margin-top: 10px;
 		font-size: $mini_size;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: $light;
 	}
 	a {
 		text-decoration: none;
@@ -26,11 +35,24 @@
 		display: flex;
 		gap: 30px;
 	}
+	.nav-elem {
+		font-weight: $medium;
+	}
 }
 .header__contacts {
 	display: flex;
+	gap: 47px;
+	margin-top: 15px;
 	.phone-number {
+		font-weight: $medium;
 		white-space: nowrap;
 	}
-	.
+	.contacts-logo {
+		display: flex;
+		gap: 30px;
+		div img{
+			min-height: 20px;
+			min-width: 20px;
+		}
+	}
 }

@@ -5,15 +5,13 @@
   border: none;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
@@ -61,8 +59,7 @@ input::-ms-clear {
 
 button, input[type=submit] {
   display: inline-block;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   background-color: transparent;
   background: none;
   cursor: pointer;
@@ -89,25 +86,84 @@ legend {
 body {
   font-family: "inter", sans-serif;
   color: #E4E5EA;
+  height: 100vh;
 }
 
 .container {
-  height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto;
+  min-height: 100vh;
+  min-width: 100vw;
   width: 100%;
   padding: 46px 150px 20px;
   background: #1E1E1E;
+  overflow: hidden;
+}
+
+a {
+  transition: all 0.1s ease;
+}
+a:hover {
+  opacity: 0.8;
+}
+a:active {
+  transform: scale(0.96);
+}
+
+.red-ball {
+  position: absolute;
+  top: 75px;
+  left: 35%;
+}
+
+.red-ball2 {
+  position: absolute;
+  top: 55%;
+  left: 65%;
+}
+
+.purple-ball {
+  position: absolute;
+  top: 0px;
+  left: 70%;
+}
+
+.purple-light {
+  position: absolute;
+  top: -154px;
+  left: 602px;
+  width: 259px;
+  height: 259px;
+  border-radius: 50%;
+  filter: blur(200px);
+  background-color: rgba(131, 58, 180, 0.5);
+}
+
+.red-light {
+  position: absolute;
+  top: 251px;
+  left: -102px;
+  width: 311px;
+  height: 311px;
+  border-radius: 50%;
+  filter: blur(200px);
+  background-color: rgba(150, 26, 26, 0.5);
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 137px;
   font-family: "Inter", sans-serif;
   color: #E4E5EA;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.header-left {
+  display: flex;
+  gap: 52px;
 }
 
 .header__logo {
@@ -120,6 +176,8 @@ body {
 .header__logo .logo-desc {
   margin-top: 10px;
   font-size: 0.625rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
 }
 .header__logo a {
   text-decoration: none;
@@ -129,17 +187,187 @@ body {
   margin-top: 15px;
 }
 .header__nav .nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 30px;
 }
+.header__nav .nav-elem {
+  font-weight: 500;
+}
 
 .header__contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
+  gap: 47px;
+  margin-top: 15px;
 }
 .header__contacts .phone-number {
+  font-weight: 500;
   white-space: nowrap;
 }
+.header__contacts .contacts-logo {
+  display: flex;
+  gap: 30px;
+}
+.header__contacts .contacts-logo div img {
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.main {
+  padding: 90px 0px 59px;
+  color: #E4E5EA;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  color: inherit;
+}
+.hero h1 {
+  font-size: 3rem;
+}
+.hero h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+.hero .hero-left h1 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.hero .hero-left h1 span {
+  font-weight: 900;
+  background: linear-gradient(to right, #FCB045 55%, #FF3F78 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero .hero-left h3 {
+  margin-top: 30px;
+}
+.hero .hero-right {
+  margin-top: 15px;
+  text-align: right;
+}
+.hero .hero-right h3 {
+  font-weight: 500;
+}
+.hero .hero-right h3 span {
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #FCB045 40%, #FF3F78 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 30% 100%;
+  background-position: 100% 0;
+  background-attachment: fixed;
+  transition: background-position 0.5s ease;
+}
+.hero .hero-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  margin-top: 40px;
+}
+.hero .list-elem {
+  white-space: nowrap;
+}
+.hero .list-elem .heading {
+  margin-bottom: 6px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+.hero .list-elem .desc {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+.hero .hero-button {
+  margin-top: 61px;
+  padding: 21px 35px;
+  background-color: #4077F3;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.1s ease;
+}
+.hero .hero-button:hover {
+  opacity: 0.8;
+}
+.hero .hero-button:active {
+  transform: scale(0.99);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 55px 0px 0px;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: transparent;
+  z-index: 1;
+}
+.footer .heading {
+  margin-bottom: 10px;
+  color: #656566;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 98px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 52px;
+       column-gap: 52px;
+  row-gap: 10px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: right;
+}
+.contacts .heading {
+  margin-bottom: 0px;
+}
+.contacts .contacts-logo {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+.contacts div {
+  white-space: nowrap;
+}
+.contacts .rights {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 50px;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+.contacts .rights a {
+  text-decoration: underline;
+}/*# sourceMappingURL=main.css.map */
